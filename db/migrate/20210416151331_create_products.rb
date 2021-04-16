@@ -6,8 +6,6 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.decimal :price
       t.boolean :availability
 
-      t.belongs_to :category
-
       t.timestamps
     end
   end
