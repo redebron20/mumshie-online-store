@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
     belongs_to :category
-    has_many :quantities 
+    has_many :orders 
+    has_many :users, through: :orders
 
     validates :name, presence: true, uniqueness: true
     validates :price, presence: true
