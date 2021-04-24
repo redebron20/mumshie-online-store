@@ -2,7 +2,7 @@
 
 <ul>
 <% @products.each do |prod| %>
-    <li>Item: <%= prod.name %> - $<%= prod.price.to_i %> each</li>
+    <li><%= link_to prod.name, prod %> - $<%= prod.price.to_i %> each</li>
     <%= %>
 <% end %>
 </ul>

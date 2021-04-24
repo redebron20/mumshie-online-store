@@ -14,6 +14,10 @@
             <%= f.label :password, class: "form-label" , class: "form-label" %>
             <%= f.password_field :password, class: "form-input" %>
         </div>
+        <div class="form-control">
+            <%= f.label :password_confirmation, class: "form-label" , class: "form-label" %>
+            <%= f.password_field :password_confirmation, class: "form-input"%>
+        </div>
         <%= f.submit :create%>
     <% end %>
     Already have an account?
