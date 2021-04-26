@@ -6,7 +6,6 @@ class CategoriesController < ApplicationController
 
     def new
         @category = Category.new
-        @category.products.build
     end
 
     def create
@@ -21,6 +20,20 @@ class CategoriesController < ApplicationController
 
     def show
         @category = Category.find_by(id: params[:id])
+    end
+
+    def edit
+        @category = Category.find_by(id: params[:id])
+    end
+
+    def update
+        @category.update(category_params)
+        if @category.valid?
+            redirect_to @category
+        else
+            render :edit
+        end
+
     end
 
     private
