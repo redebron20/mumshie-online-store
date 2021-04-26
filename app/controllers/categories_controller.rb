@@ -33,7 +33,14 @@ class CategoriesController < ApplicationController
         else
             render :edit
         end
+    end
 
+    def destroy
+        if @category.destroy
+            redirect_to categories_path
+        else
+            redirect_to @category
+        end
     end
 
     private
