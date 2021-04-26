@@ -1,1 +1,6 @@
-<h1>Our Catalog</h1>
+ <div>
+    <% @categories.each do |category| %>
+        <%= link_to category.name, category_path(category)%>
+        <p><%= category.description %>
+    <% end %>
+</div>
