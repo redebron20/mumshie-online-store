@@ -3,16 +3,9 @@
         <h2>Create a New Category</h2>
     </header>
     <%= form_with(model: @category) do |f| %>
+        <%= render partial: "form", locals: {f: f}%>
+        
         <div class="form-input">
-            <div class="form-input">
-                <%= f.label :name %>
-                <%= f.text_field :name%>
-            </div>
-            <div class="form-input">
-                <%= f.label :description %>
-                <%= f.text_area :description %>
-            </div>
-
             <h3>Create a new product (optional)</h3>
             <%= f.fields_for :products do |products_fields| %>
                 <div class="form-input">
