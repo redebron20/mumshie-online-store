@@ -1,6 +1,6 @@
-Category Show Page
+
 
 <div>
-    <h2><%= @category.name %></h2>
+    <%= render partial: "category", locals: { category: @category } %>
     <p><%= @category.description %></p>
 </div>
