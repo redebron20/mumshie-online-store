@@ -1,8 +1,8 @@
 <h1>Products</h1>
 
 <ul>
-<% @products.each do |prod| %>
-    <li><%= link_to prod.name, prod %> - $<%= prod.price.to_i %> each</li>
+<% @products.each do |product| %>
+    <li><%= link_to product.name, product %> - $<%= product.price.to_i %> each</li>
     <%= %>
 <% end %>
 </ul>

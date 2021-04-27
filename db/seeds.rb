@@ -8,3 +8,17 @@
 
 #   categories = Category.create([{ name: 'Groceries' }, { name: 'Clothing' }, { name: 'Accessories' }])
 #   Product.create(name: 'Banana', category: categories.first)
+
+#Product.destroy_all
+
+# 10.times do
+#     category = Category.create(
+#         name: Faker::Commerce.department,
+#         description: Faker::Lorem.words
+#     )
+#     product = Product.create(
+#         name: Faker::Commerce.unique.product_name,
+#         price: Faker::Number.decimal,
+#         description: Faker::Hipster.sentence(word_count: rand(4..8))
+#     )
+# end
