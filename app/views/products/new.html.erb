@@ -2,7 +2,7 @@
 
 <%= form_with model: @product do |f|%>
     <fieldset>
-        <%= render partial: 'product_new', locals: {form: f} %>
+        <%= render partial: 'form', locals: {form: f} %>
         <%= f.collection_select :category_id, Category.order(:id), :id, :name, {selected: @category_id} %>
     </fieldset>
 
