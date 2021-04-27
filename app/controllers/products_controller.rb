@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
     end
 
     def new
+        @category_id = params[:category_id]
         @product = Product.new
     end
 
@@ -29,5 +30,9 @@ class ProductsController < ApplicationController
         @product = Product.find_by_id(params[:id])
     end
 
-    
+    def product_params
+        params.require(:product).permit(:name, :description, :availability, :price
+        )
+    end
+
 end
