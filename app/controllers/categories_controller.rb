@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
 
     def new
         @category = Category.new
+        @category.products.build
     end
 
     def create

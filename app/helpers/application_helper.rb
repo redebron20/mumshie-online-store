@@ -11,6 +11,10 @@ module ApplicationHelper
     def redirect_if_logged_in
         redirect_to login_path if !logged_in?
     end
+    
+    def conditional_errors(object)
+        render partial: "products/errors", locals: {object: object} if object.errors.any?
+    end
 
 
 end
