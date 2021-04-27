@@ -10,22 +10,29 @@ class ProductsController < ApplicationController
     end
 
     def new
-        if params[:category_id] && @category = Category.find(params[:category_id])
+        if params[:category_id] && @category = Category.find_by(params[:category_id])
             @product = Product.new(category_id: params[:category_id])
         else
-            @product = Product.new
-            build_category
+            @category_id = params[:product][:category_id]
+            @product = product
+            render :new
         end   
     end
 
     def create
         @product = Product.new(product_params)
+        @category = Category.find(params[:category_id]) if params[:category_id]
+        
         if @product.save
-
+            redirect_to @product
         else
-
+            build_category
+            render :edit
         end
+    end
 
+    def edit
+        build_category
     end
 
     private
