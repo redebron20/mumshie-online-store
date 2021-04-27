@@ -10,8 +10,12 @@ class ProductsController < ApplicationController
     end
 
     def new
-        @category_id = params[:category_id]
-        @product = Product.new
+        if params[:category_id] && @category = Category.find(params[:category_id])
+            @product = Product.new(category_id: params[:category_id])
+        else
+            @product = Product.new
+            build_category
+        end   
     end
 
     def create
@@ -33,6 +37,10 @@ class ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(:name, :description, :availability, :price
         )
+    end
+
+    def build_category
+        @product.build_category
     end
 
 end

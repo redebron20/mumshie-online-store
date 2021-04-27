@@ -1,10 +1,10 @@
-<h1>New Product</h1>
+<h1>Create a New Product</h1>
 
-<%= form_with model: @product, url: category_products_path(@category_id) do |f|%>
+<%= form_with model: @product do |f|%>
     <fieldset>
         <%= render partial: 'product_new', locals: {form: f} %>
         <%= f.collection_select :category_id, Category.order(:id), :id, :name, {selected: @category_id} %>
-      </fieldset>
+    </fieldset>
 
 <% end %>
 
