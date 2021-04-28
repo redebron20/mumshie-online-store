@@ -1,4 +1,10 @@
 
+<%= form_with(url: products_path, method: :get) do |f| %>
+    <%= f.label :search, "Search products by name" %>
+    <%= f.text_field :search %>
+    <%= f.submit "Search" %>
+<% end %>
+
 <h1>Products</h1>
 
 <ul>

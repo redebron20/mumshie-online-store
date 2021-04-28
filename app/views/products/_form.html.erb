@@ -7,4 +7,5 @@
 <%= form.number_field :price, min: 0.00, step: 0.01, placeholder: 'Price' %>
 <%= form.label :availability %>
 <%= form.select :availability, options_for_select([true, false]), include_blank: "Select an availability" %>
-<%= form.label  :category_id, 'Category' %>
+<%= form.label  :category %>
+<%= form.collection_select :category, Category.order(:id), :id, :name, selected: @category_id, include_blank: "Select a category" %>

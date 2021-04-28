@@ -2,20 +2,25 @@ class ProductsController < ApplicationController
     before_action :find_product, only: :show
     
     def index
-        @products = Product.all
+        if params["search"]
+            @products = Product.search_by_name(params["search"])
+        elsif params[:category_id] && @category = Category.find(params[:category_id])
+            @products = @category.products
+        else
+            @products = Product.all
+        end
     end
 
     def show
         find_product
     end
 
-    def new
+    def new  
         if params[:category_id] && @category = Category.find_by(params[:category_id])
             @product = Product.new(category_id: params[:category_id])
         else
-            @category_id = params[:product][:category_id]
-            @product = product
-            render :new
+            @product = Product.new
+            @product.build_category
         end   
     end
 
@@ -27,7 +32,7 @@ class ProductsController < ApplicationController
             redirect_to @product
         else
             build_category
-            render :edit
+            render :new
         end
     end
 

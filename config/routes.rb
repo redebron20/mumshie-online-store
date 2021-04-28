@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[index, show]
-  resources :products, only: %i[show edit update destroy]
+  resources :products
   resources :admins
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

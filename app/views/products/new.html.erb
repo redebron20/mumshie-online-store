@@ -3,7 +3,6 @@
 <%= form_with model: @product do |f|%>
     <fieldset>
         <%= render partial: 'form', locals: {form: f} %>
-        <%= f.collection_select :category_id, Category.order(:id), :id, :name, {selected: @category_id} %>
     </fieldset>
     <%= f.submit 'Create product' %>
 <% end %>
