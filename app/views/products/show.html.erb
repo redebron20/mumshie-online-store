@@ -1,8 +1,23 @@
-<%= form_with model: @product do |f|%>
-  <fieldset>
-      <%= render partial: 'form', locals: {form: f, product: @product} %>
-  </fieldset>
-<% end %>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+  <fieldset>
+  <h1><%= @product.name %></h1> 
+  
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+  
+  <p>
+    <strong>Availability:</strong>
+    <%= @product.availability %>
+  </p>
+  
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency @product.price %>
+  </p>
+  </fieldset>
+
+
+<%= link_to 'Edit Product', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

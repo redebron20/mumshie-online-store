@@ -40,7 +40,6 @@ class ProductsController < ApplicationController
     end
 
     def update
-        byebug
         @product.update(product_params)
         if @product.valid?
             redirect_to @product
@@ -50,7 +49,7 @@ class ProductsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         if @product.destroy
             redirect_to products_path
         else
