@@ -9,16 +9,19 @@
 #   categories = Category.create([{ name: 'Groceries' }, { name: 'Clothing' }, { name: 'Accessories' }])
 #   Product.create(name: 'Banana', category: categories.first)
 
-#Product.destroy_all
 
-# 10.times do
-#     category = Category.create(
-#         name: Faker::Commerce.department,
-#         description: Faker::Lorem.words
-#     )
-#     product = Product.create(
-#         name: Faker::Commerce.unique.product_name,
-#         price: Faker::Number.decimal,
-#         description: Faker::Hipster.sentence(word_count: rand(4..8))
-#     )
-# end
+Category.destroy_all
+Product.destroy_all
+
+10.times do
+    p = Product.create(
+        name: Faker::Commerce.product_name,
+        price: Faker::Commerce.price,
+        description: Faker::Hipster.sentence(word_count: rand(4..8)),
+        category: (Category.create(
+            name: Faker::Commerce.department,
+            description: Faker::Lorem.words
+        ))
+    )
+    puts "Creating #{p.name}"
+end
