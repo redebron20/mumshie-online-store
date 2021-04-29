@@ -20,8 +20,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        byebug
-        @user = current_user
     end
 
     private

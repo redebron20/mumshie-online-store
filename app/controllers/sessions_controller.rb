@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    #before_action :redirect_if_logged_in, only: [:new]
+    before_action :redirect_if_logged_in, only: [:new]
 
     def new
         @user = User.new
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       end
     
       def destroy
-        session.delete(:current_user_id) if session[:current_user_id]
+        session.delete(:user_id) if session[:user_id]
         flash[:notice] = "Signed out"
         redirect_to root_path
       end
