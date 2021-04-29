@@ -13,7 +13,7 @@
 Category.destroy_all
 Product.destroy_all
 
-10.times do
+20.times do
     p = Product.create(
         name: Faker::Commerce.product_name,
         price: Faker::Commerce.price,
