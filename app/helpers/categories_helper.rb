@@ -1,4 +1,7 @@
 module CategoriesHelper
+    def active_css(path)
+        "active" if current_page?(path)
+    end
 
     def display_h1_conditionally(resource)
         if resource

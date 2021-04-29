@@ -11,6 +11,25 @@
   </head>
 
   <body>
+  <nav>
+    <div class="navbar-list">
+        <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
+        <a class="navbar-link <%= active_css(categories_path)%>" href="/categories">Categories</a>
+        <a class="navbar-link <%= active_css(products_path)%>" href="/products">Products</a>
+        <a class="navbar-link <%= active_css(new_category_path)%>" href="/categories/new">New Category</a>
+        <a class="navbar-link <%= active_css(new_product_path)%>" href="/products/new">New Product</a>
+      </div>
+  </nav>
+  <div class="content">
     <%= yield %>
-  </body>
+  </div>
+</body>
+<footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by Mumshie.</p>
+    </div>
+  </div>
+</footer>
 </html>
