@@ -5,7 +5,7 @@
 
 <%= form_with model: @product do |f|%>
     <fieldset>
-        <%= render partial: 'form', locals: {form: f} %>
+        <%= render partial: 'form', locals: {form: f, product: @product} %>
         <%= nested_product_form_conditional(@product, @category, f) %>
     </fieldset>
     <%= f.submit 'Create product' %>

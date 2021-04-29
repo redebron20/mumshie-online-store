@@ -10,7 +10,7 @@ class Product < ApplicationRecord
 
     def category_attributes=(attributes)
         if !attributes["name"].blank?
-            self.category = Brand.find_or_create_by(attributes)
+            self.category = Category.find_or_create_by(attributes)
         end
     end
 end
