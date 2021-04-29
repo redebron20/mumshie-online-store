@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple e-commerce store application that enables:
+* A user to create an account, log in, view products, add products to cart, change quantity and check out.
+* An admin user can add and edit categories and products, and view orders.
 
-Things you may want to cover:
+To get started, please follow below steps:
 
-* Ruby version
+* Clone the repository
+```$ git clone```
 
-* System dependencies
+* Install required gems
+```$ bundle install```
 
-* Configuration
+* Create and configure the database
+```$ rake db:create db:migrate```
 
-* Database creation
+* Run the server
+```$ rails s```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Type this script into the browser
+```$ localhost:3000/```
