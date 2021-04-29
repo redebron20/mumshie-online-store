@@ -6,13 +6,14 @@ class SessionsController < ApplicationController
     end
 
     def create
+     
         user = User.find_by(username: params[:user][:username])
         if user && user.authenticate(params[:user][:password])
           session[:user_id] = user.id
           redirect_to user
         else
-          #set error message with flash
-          redirect_to '/login', error: "Invalid credentials"
+          flash.now[:error] = @user.errors.full_messages.to_sentence
+          redirect_to '/login'
         end
       end
     

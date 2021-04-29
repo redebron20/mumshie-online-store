@@ -12,8 +12,9 @@ class UsersController < ApplicationController
         @user = User.create(signup_params)
         if @user.id
             session[:user_id] = @user.id
-            redirect_to @user
+            redirect_to @user, success: "Account created!"
         else
+            flash.now[:error] = @user.errors.full_messages.to_sentence
             render :new
         end
     end
