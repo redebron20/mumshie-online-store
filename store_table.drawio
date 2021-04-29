@@ -1,27 +1,22 @@
 <mxfile>
     <diagram id="GgGyAQL7Tlq910u7JSnT" name="Page-1">
-        <mxGraphModel dx="1086" dy="406" grid="0" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1004" dy="409" grid="0" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="42" value="USER" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="36" y="55.5" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="43">
+                <mxCell id="100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;endFill=0;startArrow=classic;startFill=1;" parent="1" source="43" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="331" y="150.5" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="43" value="has_many :orders&lt;br&gt;has_many :purchase_products, &lt;br&gt;through: :orders, source: :products&lt;br&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="43" value="has_many :orders&lt;br&gt;has_many :order_items, &lt;br&gt;through: :orders" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="36" y="95.5" width="170" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="email: string&lt;br&gt;password: string&lt;br&gt;admin: boolean, default: false&lt;br&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="36" y="205.5" width="170" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="93" style="edgeStyle=orthogonalEdgeStyle;rounded=1;sketch=1;jumpSize=4;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=ERmany;endFill=0;strokeColor=#f0f0f0;" parent="1" source="63" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="425" y="253" as="targetPoint"/>
-                    </mxGeometry>
                 </mxCell>
                 <mxCell id="63" value="PRODUCT" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="340" y="351" width="170" height="40" as="geometry"/>
@@ -32,7 +27,15 @@
                 <mxCell id="98" style="edgeStyle=orthogonalEdgeStyle;rounded=1;sketch=1;jumpSize=4;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=ERmany;endFill=0;strokeColor=#f0f0f0;" parent="1" source="65" target="68" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="65" value="belongs_to :category&lt;br&gt;has_many :orders&lt;br&gt;has_many :users,&amp;nbsp;&lt;br&gt;through: :orders" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="65">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="217" y="500" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="223" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="65" value="belongs_to :category&lt;br&gt;has_many :order_items&lt;br&gt;&lt;br&gt;#has_many :orders,&amp;nbsp;&lt;br&gt;through: :order_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="340" y="392" width="170" height="109" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="CATEGORY" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
@@ -44,14 +47,26 @@
                 <mxCell id="68" value="has_many :products" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="648" y="121" width="170" height="69" as="geometry"/>
                 </mxCell>
+                <mxCell id="110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.994;entryY=0.42;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="72" target="106">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="72" value="subtotal: decimal&lt;br&gt;tax: decimal&lt;br&gt;total: decimal" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="334" y="193" width="170" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="ORDER" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="334" y="83" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="74" value="belongs_to :user&lt;br&gt;belongs_to :product&lt;br&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="74" value="belongs_to :user&lt;br&gt;has_many :line_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="334" y="123" width="170" height="69" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="quantity: integer, default: 1" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="487" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="ORDER ITEM" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="377" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="belongs_to :order&lt;br&gt;belongs_to :product" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="417" width="170" height="69" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
