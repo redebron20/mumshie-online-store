@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
     #signing up
     get '/signup', to: 'users#new'
-    post '/users', to: 'users#create'
+    post '/signup', to: 'users#create'
   
     #logging in
     get '/login', to: "sessions#new"
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :products, only: %i[index new create]
   end
 
-  resources :users, only: %i[index, show]
+  resources :users, except: :new
   resources :products
   resources :admins
 

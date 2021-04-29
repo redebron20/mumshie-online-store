@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-    #before_action :redirect_if_logged_in, only: [:new]
+    before_action :redirect_if_logged_in, only: [:new]
+
+    def index
+    end
 
     def new
         @user = User.new
@@ -16,6 +19,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        byebug
         @user = current_user
     end
 
