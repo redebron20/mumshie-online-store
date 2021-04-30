@@ -15,7 +15,14 @@ Rails.application.routes.draw do
     resources :products, only: %i[index new create]
   end
 
-  resources :order_items
+  get 'orders/:id' => "orders#show", as: "order"
+  delete 'orders/:id' => "orders#destroy"
+
+  post 'order_items/:id/add' => "order_items#add_quantity", as: "order_item_add"
+  post 'order_items/:id/reduce' => "order_items#reduce_quantity", as: "order_item_reduce"
+  post 'order_items' => "order_items#create"
+  get 'order_items/:id' => "order_items#show", as: "order_item"
+  delete 'order_items/:id' => "order_items#destroy"
 
   resources :users, except: :new
   resources :products
