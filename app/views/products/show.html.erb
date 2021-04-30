@@ -1,6 +1,6 @@
 
   <fieldset>
-  <h1><%= @product.name %></h1> 
+  <h2><%= @product.name %></h2> 
   
   <p>
     <strong>Description:</strong>
@@ -17,8 +17,8 @@
     <%= number_to_currency @product.price %>
   </p>
 
-  <hr>
-    <%= <%= button_to "Add to cart", order_items_path(:product_id => product.id)%>%>
+  
+  <%= button_to "Add to cart", order_items_path(:product_id => @product.id)%>
   </fieldset>
 
 

@@ -3,7 +3,7 @@ class OrderItemsController < ApplicationController
         # Find associated product and current order
         chosen_product = Product.find(params[:product_id])
         current_cart = @current_cart
-        byebug
+       
         # If order already has this product then find the relevant order_item and iterate quantity otherwise create a new order_item for this product
         if current_cart.products.include?(chosen_product)
           # Find the order_item with the chosen_product

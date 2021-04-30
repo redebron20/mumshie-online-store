@@ -9,5 +9,6 @@
         <%=  render partial: "nested_category", locals: {f: f, product: @product} %>
         <div class="form-button"><%= f.submit %></div>
     <% end %>
-    <%= button_to 'Delete this product', product_path(@product), method: 'delete' %>
+    <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"} %> <br>
+    <%= link_to "New product", new_product_path %>
 </div>

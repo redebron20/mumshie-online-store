@@ -1,15 +1,16 @@
 <%= display_h1_conditionally(@category) %>
 
-<%= form_with(url: products_path, method: :get) do |f| %>
-    <%= f.label :search, "Search products by name" %>
-    <%= f.text_field :search %>
-    <%= f.submit "Search" %>
-<% end %>
+    <%= form_with(url: products_path, method: :get) do |f| %>
+        <%= f.label :search, "Search products by name" %>
+        <%= f.text_field :search %>
+        <%= f.submit "Search" %>
+    <% end %>
 
-<ul>
-<% @products.each do |product| %>
-    <li><%= link_to product.name, product %> - <%= number_to_currency product.price %> each</li>
-    <%= button_to "Add to cart", order_items_path(:product_id => product.id)%>
-    
-<% end %>
-</ul>
+<div class="new-form">
+    <% @products.each do |product| %>
+        <p>Name: <%= link_to product.name, product %> </p>
+        <p> Price: <%= number_to_currency product.price %> each</p>
+        <p><%= button_to "Add to cart", order_items_path(:product_id => product.id) %></p> 
+        <hr>
+    <% end %>
+</div>

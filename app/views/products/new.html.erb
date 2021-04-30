@@ -1,13 +1,15 @@
-
 <%= conditional_errors(@product) %>
 
-<h1>Create a New Product</h1>
+<div class="new-form">
+    <h1>Create a New Product</h1>
 
-<%= form_with model: @product do |f|%>
-    <fieldset>
+    <%= form_with model: @product do |f|%>
+        
         <%= render partial: 'form', locals: {form: f, product: @product} %>
-        <%= nested_product_form_conditional(@product, @category, f) %>
-    </fieldset>
-    <%= f.submit 'Create product' %>
-<% end %>
+        <%= nested_product_form_conditional(@product, @category, f) %> 
+        <hr>
+        
+        <div class="form-button"><%= f.submit 'Create product' %></div>
+    <% end %>
+</div>
 
