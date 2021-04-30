@@ -10,6 +10,6 @@
 <% @products.each do |product| %>
     <li><%= link_to product.name, product %> - <%= number_to_currency product.price %> each</li>
     <%= button_to "Add to cart", order_items_path(:product_id => product.id)%>
-    <%= %>
+    
 <% end %>
 </ul>

@@ -18,14 +18,7 @@
   </p>
 
   <hr>
-    <%= form_for @order_item, remote: true, :html => { id: "add-to-cart-form" } do |f| %>
-      <div>
-
-        <%= f.hidden_field :product_id, value: @product.id %>
-        <br>
-        <%= f.submit "Add to Cart", class: "custom-button text-sm" %>
-      </div>
-    <% end %>
+    <%= <%= button_to "Add to cart", order_items_path(:product_id => product.id)%>%>
   </fieldset>
 
 
