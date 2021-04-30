@@ -23,12 +23,4 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    # def current_order
-    #     if session[:order_id]
-    #         @current_order ||= Order.find_by_id(session[:order_id])
-    #     else
-    #         @current_order = Order.create
-    #         session[:order_id] = @current_order.id
-    #     end
-    # end
 end
