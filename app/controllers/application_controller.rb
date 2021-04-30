@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
     private
     def current_order
-        if session[current_order_id]
+        if session[:order_id]
           order = Order.find_by(:id => session[:order_id])
           if order.present?
             @current_order = order

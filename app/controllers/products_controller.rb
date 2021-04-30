@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
 
     def show
         find_product
-        @order_item = current_order.order_items.new
     end
 
     def new  

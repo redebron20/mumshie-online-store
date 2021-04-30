@@ -11,13 +11,14 @@ class OrderItemsController < ApplicationController
           # Iterate the order_item's quantity by one
           @order_item.quantity += 1
         else
-          @order_item = orderItem.new
+          @order_item = OrderItem.new
           @order_item.order = current_order
           @order_item.product = chosen_product
         end
       
         # Save and redirect to order show path
         @order_item.save
+        byebug
         redirect_to order_path(current_order)
       end
       
