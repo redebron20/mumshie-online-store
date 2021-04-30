@@ -2,11 +2,11 @@ class OrdersController < ApplicationController
     before_action :find_order, only: [:new, :show, :edit]
 
     def index
-      @orders = Order.all.order("created_at DESC")
+      @orders = Order.all
     end
     
     def show
-      @order = Order.find(params[:id])
+      current_order
     end
     
     def new
@@ -21,6 +21,13 @@ class OrdersController < ApplicationController
       else
         render :new
       end
+    end
+
+    def destroy
+      @order = @current_order
+      @order.destroy
+      session[:order_id] = nil
+      redirect_to root_path
     end
 
     private
