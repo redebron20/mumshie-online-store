@@ -43,9 +43,4 @@ class OrderItemsController < ApplicationController
         @order_item.save
         redirect_to cart_path(@current_cart)
       end
-      
-      private
-        def order_item_params
-          params.require(:order_item).permit(:quantity, :product_id, :cart_id)
-        end
 end
