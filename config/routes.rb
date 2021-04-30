@@ -15,8 +15,8 @@ Rails.application.routes.draw do
     resources :products, only: %i[index new create]
   end
 
-  get 'orders/:id' => "orders#show", as: "order"
-  delete 'orders/:id' => "orders#destroy"
+  get 'carts/:id' => "carts#show", as: "cart"
+  delete 'carts/:id' => "carts#destroy"
 
   post 'order_items/:id/add' => "order_items#add_quantity", as: "order_item_add"
   post 'order_items/:id/reduce' => "order_items#reduce_quantity", as: "order_item_reduce"
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :products
   resources :admins
   resources :orders
-  resources :carts, only: :show
+ 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
