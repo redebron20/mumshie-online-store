@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :order_items
+
   root 'products#index'
 
     #signing up
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :categories do
     resources :products, only: %i[index new create]
   end
+
+  resources :order_items
 
   resources :users, except: :new
   resources :products
