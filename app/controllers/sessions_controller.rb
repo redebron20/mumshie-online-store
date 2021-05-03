@@ -17,7 +17,22 @@ class SessionsController < ApplicationController
           redirect_to '/login'
         end
       end
-    
+
+      def omniauth 
+        byebug
+        user = User.find_or_create_by(uid: request.env['omniauth.auth'][:uid], provider: request.env['omniauth.auth'][:provider]) do |u|
+          u.username = request.env['omniauth.auth'][:info][:name]
+          u.email = request.env['omniauth.auth'][:info][:email]
+          u.password = SecureRandom.hex(16)
+        end 
+        if user.valid?
+          session[:user_id] = user.id # log them 
+          redirect_to root_path
+        else
+          redirect_to login_path 
+        end 
+      end 
+
       def destroy
         session.delete(:user_id) if session[:user_id]
         flash[:notice] = "Signed out"

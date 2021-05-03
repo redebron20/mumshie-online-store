@@ -14,5 +14,10 @@
         <%= f.submit "Sign in"%>
     <% end %>
     Don't have an account? <%= link_to "Sign up", signup_path, class: "show-signup" %> here.
+
+    <p>or login with Google:</p>
+    <div class="third-party-login">
+        <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+    </div>
     
 </div>
