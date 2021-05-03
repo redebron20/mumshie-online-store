@@ -29,7 +29,18 @@
     
   </nav>
   <div class="content">
-    <%= yield %>
+
+    <div class="content" style="background-image: url('/img/dot-grid.png')">
+
+      <% if flash[:success] %>
+        <p class="success"><%= flash[:success] %></p>
+        <%else flash[:error]%>
+        <p class="error"><%= flash[:error] %></p>
+      <% end %>
+    
+
+      <%= yield %>
+    </div>
   </div>
 </body>
 <footer class="site-footer">
