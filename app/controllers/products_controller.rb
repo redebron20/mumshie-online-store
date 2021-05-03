@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     before_action :find_product, only: [:show, :edit, :update, :destroy]
-    before_action :redirect_if_not_admin, except: [:index, :show]
+    before_action :redirect_unless_admin, except: [:index, :show]
     
     def index
         if params["search"]
@@ -17,7 +17,6 @@ class ProductsController < ApplicationController
     end
 
     def new  
-        redirect_if_not_admin
         if params[:category_id] && @category = Category.find_by(params[:category_id])
             @product = Product.new(category_id: params[:category_id])
         else

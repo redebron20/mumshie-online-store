@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+    before_action :redirect_unless_admin, except: [:index, :show]
 
     def index
         @categories = Category.all

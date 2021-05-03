@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
           u.password = SecureRandom.hex(16)
         end 
         if user.valid?
-          session[:user_id] = user.id # log them 
+          session[:user_id] = user.id
           redirect_to root_path
         else
           redirect_to login_path 

@@ -20,10 +20,14 @@ module ApplicationHelper
         render partial: "products/errors", locals: {object: object} if object.errors.any?
     end
 
-    def redirect_if_not_admin
+    def redirect_unless_admin
         if current_user.role != "admin"
             flash[:error] = 'Unauthorized'
             redirect_to root_path
         end
+    end
+
+    def user_admin
+        current_user.role = "admin"
     end
 end
