@@ -13,14 +13,19 @@
   <body>
   <nav>
     <div class="navbar-list">
-     <% if logged_in? %>
+    
         <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
         <a class="navbar-link <%= active_css(categories_path)%>" href="/categories">Categories</a>
         <a class="navbar-link <%= active_css(products_path)%>" href="/products">Products</a>
-        <a class="navbar-link <%= active_css(new_category_path)%>" href="/categories/new">New Category</a>
-        <a class="navbar-link <%= active_css(new_product_path)%>" href="/products/new">New Product</a>
         <a class="navbar-link <%= %>" href="/carts/show">View Cart</a>
+
+        <% if logged_in? %>
         <%= button_to "Logout", logout_path, method: :delete, class: "navbar-link active_css(root_path)" %>
+        
+          <% unless user_admin %>
+            <a class="navbar-link <%= active_css(new_category_path)%>" href="/categories/new">New Category</a>
+            <a class="navbar-link <%= active_css(new_product_path)%>" href="/products/new">New Product</a>
+          <% end%>
       <% else %>
         <%= button_to "Log In", login_path, method: :get, class: "navbar-link active_css(root_path)" %>
         <%= button_to "Sign Up", signup_path, method: :get, class: "navbar-link active_css(root_path)" %>

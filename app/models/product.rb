@@ -7,6 +7,7 @@ class Product < ApplicationRecord
     validates :price, presence: true
     
     scope :search_by_name, -> (search) {where("name LIKE ?", "#{search}%")}
+    scope :latest_products, -> {order(created_at: :desc)}
 
     def category_attributes=(attributes)
         if !attributes["name"].blank?

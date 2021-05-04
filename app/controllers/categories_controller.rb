@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
     before_action :redirect_unless_admin, except: [:index, :show]
 
     def index
-        @categories = Category.all
+        @categories = Category.alpha
     end
 
     def new
@@ -25,7 +25,12 @@ class CategoriesController < ApplicationController
     end
 
     def edit
-        @category = Category.find_by(id: params[:id])
+        if logged_in?
+            @category = Category.find_by(id: params[:id])
+            redirect_unless_admin
+        else
+            redirect_to category_path(@category)
+        end
     end
 
     def update

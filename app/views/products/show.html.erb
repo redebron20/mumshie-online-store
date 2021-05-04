@@ -21,6 +21,7 @@
   <%= button_to "Add to cart", order_items_path(:product_id => @product.id)%>
   </fieldset>
 
-
-<%= link_to 'Edit Product', edit_product_path(@product) %> |
+<% unless user_admin %>
+  <%= link_to 'Edit Product', edit_product_path(@product) %> |
+<% end %>
 <%= link_to 'Back', products_path %>
