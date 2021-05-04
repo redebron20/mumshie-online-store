@@ -17,13 +17,13 @@
 #     puts "Creating #{c.name}"
 # end
 
-20.times do
-    p = Product.create(
-        name: Faker::Commerce.product_name,
-        availability: true,
-        price: Faker::Commerce.price,
-        description: Faker::Hipster.sentence(word_count: rand(4..8)),
-        category: Category.all.sample
-    )
-    puts "Creating #{p.name}"
-end
+# 20.times do
+#     p = Product.create(
+#         name: Faker::Commerce.product_name,
+#         availability: true,
+#         price: Faker::Commerce.price,
+#         description: Faker::Hipster.sentence(word_count: rand(4..8)),
+#         category: Category.all.sample
+#     )
+#     puts "Creating #{p.name}"
+# end

@@ -3,7 +3,7 @@
 <% if @cart.order_items.size == 0 %>
   <div class="center text-center">
     <p>Your shopping cart is currently empty.</p>  
-    <p><%= link_to "Go back to products page.", products_path %> </p>
+    <p><%= link_to "Go back.", products_path %> </p>
   </div>
 <% else %>
 
@@ -14,8 +14,8 @@
       <p>Quantity: <%= order_item.quantity %></p>
   <ul>
       <li>
-        <%= link_to "Add one", order_item_add_path(:id => order_item), method: :post %>
-        <%= link_to "Reduce one", order_item_reduce_path(:id => order_item), method: :post %>
+        <%= link_to "Add (+1)", order_item_add_path(:id => order_item), method: :post %>
+        <%= link_to "Reduce (-1)", order_item_reduce_path(:id => order_item), method: :post %>
       </li>
       <li>
         <%= link_to "Remove item", order_item_path(order_item), method: :delete %>
