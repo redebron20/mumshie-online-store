@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="GgGyAQL7Tlq910u7JSnT" name="Page-1">
-        <mxGraphModel dx="523" dy="325" grid="0" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1628" dy="763" grid="0" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -15,25 +15,25 @@
                 <mxCell id="43" value="has_many :orders&lt;br&gt;has_many :order_items, &lt;br&gt;through: :orders" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="36" y="95.5" width="170" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="61" value="email: string&lt;br&gt;password: string&lt;br&gt;admin: boolean, default: false&lt;br&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="61" value="email: string&lt;br&gt;password: string&lt;br&gt;admin: boolean, default: false&lt;br&gt;role: integer&lt;br&gt;uid: string&lt;br&gt;provider: strin" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="36" y="205.5" width="170" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="63" value="PRODUCT" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="340" y="351" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="64" value="name: string&lt;br&gt;description: text&lt;br&gt;price: decimal" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="64" value="name: string&lt;br&gt;description: text&lt;br&gt;price: decimal&lt;br&gt;availability: boolean&lt;br&gt;category_id: integer" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="340" y="501" width="170" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="98" style="edgeStyle=orthogonalEdgeStyle;rounded=1;sketch=1;jumpSize=4;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=ERmany;endFill=0;strokeColor=#f0f0f0;" parent="1" source="65" target="68" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="65" edge="1">
+                <mxCell id="113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=ERmany;endFill=0;" parent="1" source="65" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="217" y="500" as="targetPoint"/>
+                        <mxPoint x="208" y="500" as="targetPoint"/>
                         <Array as="points">
                             <mxPoint x="223" y="500"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.006;entryY=0.855;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERmany;startFill=0;endArrow=classic;endFill=1;strokeColor=#f0f0f0;" edge="1" parent="1" source="65" target="68">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="65" value="belongs_to :category&lt;br&gt;has_many :order_items&lt;br&gt;has_many :orders,&amp;nbsp;&lt;br&gt;through: :order_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="340" y="392" width="170" height="109" as="geometry"/>
@@ -47,26 +47,41 @@
                 <mxCell id="68" value="has_many :products" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="648" y="121" width="170" height="69" as="geometry"/>
                 </mxCell>
-                <mxCell id="110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.994;entryY=0.42;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="72" target="106" edge="1">
+                <mxCell id="110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.994;entryY=0.42;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=ERmany;endFill=0;" parent="1" source="72" target="106" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="72" value="subtotal: decimal&lt;br&gt;tax: decimal&lt;br&gt;total: decimal" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="72" value="user_id: integer" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="334" y="193" width="170" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="ORDER" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="334" y="83" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="74" value="belongs_to :user&lt;br&gt;has_many :line_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="74" value="belongs_to :user&lt;br&gt;has_many :order_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="334" y="123" width="170" height="69" as="geometry"/>
                 </mxCell>
-                <mxCell id="104" value="quantity: integer, default: 1" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="487" width="170" height="60" as="geometry"/>
+                <mxCell id="104" value="quantity: integer, default: 1&lt;br&gt;order_id: integer&lt;br&gt;prodict_id: integer&lt;br&gt;cart_id: integer" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="487" width="171" height="75" as="geometry"/>
                 </mxCell>
                 <mxCell id="105" value="ORDER ITEM" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="40" y="377" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="belongs_to :order&lt;br&gt;belongs_to :product" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="106" value="belongs_to :order&lt;br&gt;belongs_to :product&lt;br&gt;belongs_to: cart" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="40" y="417" width="170" height="69" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.588;entryY=0.983;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" target="104">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="727" y="488" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="727" y="688"/>
+                            <mxPoint x="140" y="688"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="115" value="CART" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="377" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="&lt;p style=&quot;color: rgb(212 , 212 , 212) ; background-color: rgb(30 , 30 , 30) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;has_many :order_items&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;has_many :products,&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;through: :order_items&lt;/span&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="417" width="170" height="69" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
