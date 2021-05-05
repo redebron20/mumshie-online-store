@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     post '/login', to: "sessions#create"
     delete '/logout', to: "sessions#destroy"
 
+  #get 'popular_category' => "popular_category"  
   resources :categories do
     resources :products, only: %i[index new create]
   end
@@ -32,7 +33,6 @@ Rails.application.routes.draw do
  
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
   
   # get '/users/reset_password', to: 'users#reset_form'
   # post '/users/reset_password', to: 'users#password_reset'

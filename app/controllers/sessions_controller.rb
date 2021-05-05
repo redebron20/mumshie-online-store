@@ -8,13 +8,15 @@ class SessionsController < ApplicationController
     def show
     end
 
-    def create  
+    def create
+        
         user = User.find_by(username: params[:user][:username])
         if user && user.authenticate(params[:user][:password])
           session[:user_id] = user.id
+          flash[:success] = "Successfully logged in!"
           redirect_to user
         else
-          flash[:error] = user.errors.full_messages.to_sentence
+          flash[:error] = "Invalid credentials. Please try again."
           redirect_to '/login'
         end
       end
@@ -29,13 +31,12 @@ class SessionsController < ApplicationController
           session[:user_id] = user.id
           redirect_to user
         else
-          redirect_to login_path 
+          render :new 
         end 
       end 
 
       def destroy
         session.delete(:user_id) if session[:user_id]
-        flash[:notice] = "Signed out"
         redirect_to root_path
       end
 

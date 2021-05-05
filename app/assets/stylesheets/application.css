@@ -48,10 +48,22 @@ h4 { font-size: 1em; }
 
 strong { color: darken(slategrey,20%); }
 
-.field_with_errors {
+p.error {
     padding: 2px;
-    background-color: red;
-    display: inline;
+    background-color: rgb(239 217 191);
+    display: inline-block;
+}
+
+p.success {
+    padding: 2px;
+    background-color: rgb(239 217 191);
+    display: inline-block;
+}
+
+div.field_with_errors {
+    padding: 2px;
+    background-color: rgb(239 217 191);
+    display: inline-block;
 }
 
 div.navbar-list {
@@ -134,3 +146,5 @@ div.form-button input {
     color: #fff;
     flex-shrink: 0;
 }
+
+
