@@ -1,10 +1,12 @@
 # README
 
-A simple e-commerce store application that enables:
-* A user to create an account, log in, view products, add products to cart, change quantity and check out.
-* An admin user can add and edit categories and products, and view orders.
+This is a basic e-commerce web application in Ruby on Rails that includes the following functionalities:
+* A user is able to create an account and log in, or login via Google.
+* A user is able to view categories and products, add/remove products to/from cart.
+* A user can view current cart, increase/decrease item quantity, remove item or empty the cart.
+* A user can be assigned an admin role to create, add and update categories and products.
 
-To get started, please follow below steps:
+Here's a quick guid to get you started:
 
 * Clone the repository
 ```
@@ -41,6 +43,6 @@ $ rails s
 $ localhost:3000/
 ```
 
-## LICENSE
+### LICENSE
 
 [MIT LICENSE](https://github.com/redebron20/mumshie-online-store/blob/master/LICENSE)
