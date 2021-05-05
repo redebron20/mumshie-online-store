@@ -8,8 +8,8 @@ class Product < ApplicationRecord
     
     scope :search_by_name, -> (search) {where("name LIKE ?", "#{search}%")}
     scope :latest_products, -> {order(created_at: :desc)}
-    scope :available_products, -> {where(availability: "true")}
-    scope :out_of_stock, -> {where(availability: "false")}
+    scope :available_products, -> {where(availability: "true").order("name")}
+    scope :out_of_stock, -> {where(availability: "false").order("name")}
 
     def category_attributes=(attributes)
         if !attributes["name"].blank?

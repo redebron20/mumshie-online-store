@@ -9,7 +9,7 @@
 
 <ul>
   <% @cart.order_items.each do |order_item| %>
-      <p>Item: <%= order_item.product.name %></p>
+      <p>Item: <%= link_to order_item.product.name, order_item.product %></p>
       <p>Price: <%= number_to_currency(order_item.total_price) %></p>
       <p>Quantity: <%= order_item.quantity %></p>
   <ul>

@@ -6,6 +6,11 @@
     <strong>Description:</strong>
     <%= @product.description %>
   </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= link_to @product.category.name, @product.category %>
+  </p>
   
   <p>
     <strong>Availability:</strong>
@@ -16,9 +21,10 @@
     <strong>Price:</strong>
     <%= number_to_currency @product.price %>
   </p>
-
   
-  <%= button_to "Add to cart", order_items_path(:product_id => @product.id)%>
+  <% if @product.availability %>
+      <p><%= button_to "Add to cart", order_items_path(:product_id => @product.id) %></p> 
+  <% end %>
   </fieldset>
 
 <% if user_admin %>

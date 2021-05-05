@@ -9,8 +9,12 @@
 <div class="new-form">
     <% @products.each do |product| %>
         <p>Name: <%= link_to product.name, product %> </p>
-        <p> Price: <%= number_to_currency product.price %> each</p>
-        <p><%= button_to "Add to cart", order_items_path(:product_id => product.id) %></p> 
+        <p> Price: US<%= number_to_currency product.price %></p>
+        <% if product.availability %>
+            <p><%= button_to "Add to cart", order_items_path(:product_id => product.id) %></p> 
+        <% else %>
+            <p> "Out of stock"</p>
+        <% end %>
         <hr>
     <% end %>
 </div>
