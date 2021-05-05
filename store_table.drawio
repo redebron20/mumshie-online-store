@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="GgGyAQL7Tlq910u7JSnT" name="Page-1">
-        <mxGraphModel dx="1628" dy="763" grid="0" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1347" dy="680" grid="0" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -32,10 +32,10 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.006;entryY=0.855;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERmany;startFill=0;endArrow=classic;endFill=1;strokeColor=#f0f0f0;" edge="1" parent="1" source="65" target="68">
+                <mxCell id="118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.006;entryY=0.855;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERmany;startFill=0;endArrow=classic;endFill=1;strokeColor=#f0f0f0;" parent="1" source="65" target="68" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="65" value="belongs_to :category&lt;br&gt;has_many :order_items&lt;br&gt;has_many :orders,&amp;nbsp;&lt;br&gt;through: :order_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="65" value="belongs_to :category&lt;br&gt;has_many :order_items&lt;br&gt;has_many :carts,&amp;nbsp;&lt;br&gt;through: :order_items&lt;br&gt;has_many :orders&lt;br&gt;through: :order_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="340" y="392" width="170" height="109" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="CATEGORY" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
@@ -56,7 +56,7 @@
                 <mxCell id="73" value="ORDER" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="334" y="83" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="74" value="belongs_to :user&lt;br&gt;has_many :order_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                <mxCell id="74" value="belongs_to :user&lt;br&gt;has_many :order_items&lt;br&gt;has_many :product&lt;br&gt;through: :order_items" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="334" y="123" width="170" height="69" as="geometry"/>
                 </mxCell>
                 <mxCell id="104" value="quantity: integer, default: 1&lt;br&gt;order_id: integer&lt;br&gt;prodict_id: integer&lt;br&gt;cart_id: integer" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
@@ -68,20 +68,20 @@
                 <mxCell id="106" value="belongs_to :order&lt;br&gt;belongs_to :product&lt;br&gt;belongs_to: cart" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="40" y="417" width="170" height="69" as="geometry"/>
                 </mxCell>
-                <mxCell id="117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.588;entryY=0.983;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" target="104">
+                <mxCell id="117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.588;entryY=0.983;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;startArrow=classic;startFill=1;" parent="1" target="104" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="727" y="488" as="sourcePoint"/>
                         <Array as="points">
-                            <mxPoint x="727" y="688"/>
-                            <mxPoint x="140" y="688"/>
+                            <mxPoint x="727" y="649"/>
+                            <mxPoint x="141" y="649"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="115" value="CART" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" vertex="1" parent="1">
+                <mxCell id="115" value="CART" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="642" y="377" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="116" value="&lt;p style=&quot;color: rgb(212 , 212 , 212) ; background-color: rgb(30 , 30 , 30) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;has_many :order_items&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;has_many :products,&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;through: :order_items&lt;/span&gt;&lt;/p&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="642" y="417" width="170" height="69" as="geometry"/>
+                <mxCell id="116" value="&lt;p style=&quot;color: rgb(212 , 212 , 212) ; background-color: rgb(30 , 30 , 30) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;has_many :order_items&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;has_many :products,&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; background-color: rgb(42 , 42 , 42)&quot;&gt;through: :order_items&lt;/span&gt;&lt;/p&gt;&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;has_many :orders,&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;through: :order_items&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="642" y="417" width="169" height="119" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

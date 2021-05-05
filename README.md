@@ -7,20 +7,40 @@ A simple e-commerce store application that enables:
 To get started, please follow below steps:
 
 * Clone the repository
-```$ git clone```
+```
+$ git clone
+```
 
 * Install required gems
-```$ bundle install```
+```
+$ bundle install
+```
 
 * Create and configure the database
-```$ rake db:create db:migrate```
+```
+$ rails db:migrate
+```
+
+* Create and configure the database
+```
+$ rails db:migrate
+```
+
+* Seed the database
+```
+$ rails db:seed
+```
 
 * Run the server
-```$ rails s```
+```
+$ rails s
+```
 
 * Type this script into the browser
-```$ localhost:3000/```
+```
+$ localhost:3000/
+```
 
-##LICENSE
+## LICENSE
 
 [MIT LICENSE](https://github.com/redebron20/mumshie-online-store/blob/master/LICENSE)

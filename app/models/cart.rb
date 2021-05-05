@@ -1,6 +1,7 @@
 class Cart < ApplicationRecord
     has_many :order_items, dependent: :destroy
     has_many :products, through: :order_items
+    has_many :orders, through: :order_items
 
     def sub_total
         sum = 0

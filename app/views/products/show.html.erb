@@ -28,6 +28,7 @@
   </fieldset>
 
 <% if user_admin %>
+<%= link_to 'New Product', new_product_path(@product) %> |
   <%= link_to 'Edit Product', edit_product_path(@product) %> |
 <% end %>
 <%= link_to 'Back', products_path %>
