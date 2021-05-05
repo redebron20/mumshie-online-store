@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,29 +12,28 @@
   <body>
   <nav>
     <div class="navbar-list">
-    
         <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
         <a class="navbar-link <%= active_css(categories_path)%>" href="/categories">Categories</a>
         <a class="navbar-link <%= active_css(products_path)%>" href="/products">Products</a>
-        <a class="navbar-link <%= %>" href="/carts/show">View Cart</a>
 
         <% if logged_in? %> 
           <% if user_admin %>
             <a class="navbar-link <%= active_css(new_category_path)%>" href="/categories/new">New Category</a>
             <a class="navbar-link <%= active_css(new_product_path)%>" href="/products/new">New Product</a>
           <% end%>
+          <a class="navbar-link <%= %>" href="/carts/show">View Cart</a>
           <%= button_to "Logout", logout_path, method: :delete, class: "navbar-link active_css(root_path)" %>
         <% else %>
+          <a class="navbar-link <%= %>" href="/carts/show">View Cart</a>
           <%= button_to "Log In", login_path, method: :get, class: "navbar-link active_css(root_path)" %>
           <%= button_to "Sign Up", signup_path, method: :get, class: "navbar-link active_css(root_path)" %>
         <% end %>
+        
       
       </div>
     
   </nav>
   <div class="content">
-
-    <div class="content" style="background-image: url('/img/dot-grid.png')">
 
       <% if flash[:success] %>
         <p class="success"><%= flash[:success] %></p>
@@ -45,7 +43,6 @@
     
 
       <%= yield %>
-    </div>
   </div>
 </body>
 <footer class="site-footer">

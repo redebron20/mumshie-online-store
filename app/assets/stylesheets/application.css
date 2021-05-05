@@ -24,14 +24,14 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    min-height: 100%;
-    margin: 0 auto;
-    padding: .5em 2em;
+    box-sizing: content-box;
+    min-height: 95%;
+    margin: 10px auto;
+    padding: 1em 3em;
     max-width: 800px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.2em;
-    background-color: white;
+    background-color: #f2f2f2;
     border: double 3px #DDD;
     border-top: none; border-bottom: none;
 }
@@ -59,12 +59,12 @@ div.navbar-list {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(216, 91, 7);
+    background-color: rgb(236 113 30);
 }
 
 div.navbar-list a {
     float: left;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -72,13 +72,12 @@ div.navbar-list a {
 }
 
 div.navbar-list a:hover {
-    background-color: rgb(221, 221, 221);
-    color: rgb(12, 11, 11);
+    text-decoration: underline;
 }
 
 /* Add a color to the active/current link */
 div.navbar-list a.active {
-    background-color: rgb(224, 204, 22);
+    background-color: rgb(236, 140, 13);
     color: white;
 }
 
@@ -129,9 +128,9 @@ div.form-button input {
 }
 
 .site-footer {
-    background-color: rgb(216, 91, 7);
+    background-color: rgb(236 113 30);
     padding: .5em .5em;
-    line-height: 1em;
+    line-height: 0em;
     color: #fff;
     flex-shrink: 0;
 }
