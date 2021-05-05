@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-    
+    before_action :redirect_unless_admin, only: [:new, :edit, :update, :destroy]
+    before_action :find_category, only: [:show, :edit, :update, :destroy]
 
     def index
         @categories = Category.alpha
@@ -21,7 +22,6 @@ class CategoriesController < ApplicationController
     end
 
     def show
-        @category = Category.find_by(id: params[:id])
     end
 
     def edit
@@ -53,5 +53,9 @@ class CategoriesController < ApplicationController
 
     def category_params
         params.require(:category).permit(:name, :decription)
+    end
+
+    def find_category
+        @category = Category.find_by(id: params[:id])
     end
 end

@@ -8,4 +8,7 @@
     <% end %>
 </div>
 
-<%= link_to 'View Categories', categories_path %>
+<%= link_to "Delete", category_path(@category), method: :delete, data: {confirm: "Are you sure?"} %> <br>
+<%= link_to "New Category", new_category_path %><br><br>
+<%= link_to 'View All Categories', categories_path %>
+
