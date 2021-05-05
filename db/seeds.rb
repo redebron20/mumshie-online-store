@@ -17,7 +17,7 @@
 #     puts "Creating #{c.name}"
 # end
 
-# 20.times do
+# 40.times do
 #     p = Product.create(
 #         name: Faker::Commerce.product_name,
 #         availability: true,

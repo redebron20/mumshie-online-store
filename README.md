@@ -20,3 +20,6 @@ To get started, please follow below steps:
 
 * Type this script into the browser
 ```$ localhost:3000/```
+
+######LICENSE
+[MIT LICENSE](https://github.com/redebron20/mumshie-online-store/blob/master/LICENSE)
