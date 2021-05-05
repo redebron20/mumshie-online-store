@@ -1,11 +1,14 @@
+<fieldset>
 <h1> <%= @category.name %> </h1>
 
 <div>
     <%= render partial: "category", locals: { category: @category } %>
     <p><%= @category.description %></p>
 </div>
+</fieldset>
 
-<% unless user_admin %>
+<% if user_admin %>
     <%= link_to 'Edit Category', edit_category_path(@category) %> |
 <% end %>
 <%= link_to 'Back', categories_path %>
+

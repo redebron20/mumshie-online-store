@@ -9,7 +9,7 @@
   
   <p>
     <strong>Availability:</strong>
-    <%= @product.availability %>
+    <%= @product.in_stock? %>
   </p>
   
   <p>
@@ -21,7 +21,7 @@
   <%= button_to "Add to cart", order_items_path(:product_id => @product.id)%>
   </fieldset>
 
-<% unless user_admin %>
+<% if user_admin %>
   <%= link_to 'Edit Product', edit_product_path(@product) %> |
 <% end %>
 <%= link_to 'Back', products_path %>

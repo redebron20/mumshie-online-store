@@ -27,7 +27,6 @@ class CategoriesController < ApplicationController
     def edit
         if logged_in?
             @category = Category.find_by(id: params[:id])
-            redirect_unless_admin
         else
             redirect_to category_path(@category)
         end

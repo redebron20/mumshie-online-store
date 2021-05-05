@@ -21,7 +21,7 @@
         <%= link_to "Remove item", order_item_path(order_item), method: :delete %>
       </li>
     </ul>
-    
+    <hr>  
   <% end %>
 </ul>
   <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>

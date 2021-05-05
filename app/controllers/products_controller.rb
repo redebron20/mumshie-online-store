@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-    before_action :find_product, only: [:show, :edit, :update, :destroy]
     before_action :redirect_unless_admin, except: [:index, :show]
+    before_action :find_product, only: [:show, :edit, :update, :destroy]
     
     def index
         if params["search"]
@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
         elsif params[:category_id] && @category = Category.find(params[:category_id])
             @products = @category.products
         else
-            @products = Product.latest_products
+            @products = Product.available_products
         end
     end
 
